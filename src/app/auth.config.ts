@@ -1,6 +1,6 @@
 export const auth0Config = {
-    clientID: 'Wmcx5Bi32XefeAkoUwkCTK3DjjOTm6qT',
-    domain: 'tlimpanont.eu.auth0.com'
+  clientID: 'Hrx3YM9PYz116yI27gyAL2c9V4f7Dxi6',
+  domain: 'tlimpanont.eu.auth0.com'
 };
 
 export const firebaseConfig = {
