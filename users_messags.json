@@ -1,0 +1,26 @@
+{
+  "rules": {
+    "messages": {
+      "$message_id": {
+        ".validate": "newData.hasChildren(['text', 'user'])",
+        "text": {
+          ".validate": "newData.isString()"
+        },
+        "user": {
+          ".validate": "newData.isString()"
+        },
+        "$other": {
+          ".validate": "false"
+        },
+        ".read": "auth != null && auth.uid == root.child('messages').child($message_id).child('user').val()",
+        ".write": "auth != null"
+      }
+    },
+    "user-messages": {
+      "$user_id": {
+        ".read": "auth != null && auth.uid == $user_id",
+        ".write": "auth != null && auth.uid == $user_id"
+      }
+    }
+  }
+}

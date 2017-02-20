@@ -10,6 +10,9 @@ import {
 } from './app.routes';
 import {AngularFireModule} from "angularfire2";
 import {firebaseConfig} from "./auth.config";
+import {ProfileService} from "./profile.service";
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,10 +21,13 @@ import {firebaseConfig} from "./auth.config";
   ],
   providers: [
     appRoutingProviders,
-    // AUTH_PROVIDERS
+    // AUTH_PROVIDERS,
+    ProfileService
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    FormsModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig)
   ],

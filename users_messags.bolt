@@ -1,0 +1,16 @@
+path /messages/{message_id} is Message {
+   write() { auth !== null }
+   read() { auth !== null && auth.uid === root.messages[message_id].user }
+}
+
+type Message {
+  text: String,
+  user: String
+}
+
+path /user-messages/{user_id} {
+   write() { isCurrentUser(user_id) }
+   read() {  isCurrentUser(user_id) }
+}
+
+isCurrentUser(uid) { auth != null && auth.uid == uid }
